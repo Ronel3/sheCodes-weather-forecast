@@ -14,6 +14,8 @@ function displayTemperature(response) {
 
   let icon = document.querySelector("#icon");
   icon.innerHTML = `<img src=" ${response.data.condition.icon_url}" class="current-temperature-icon">`;
+
+  showForecast(response.data.city);
 }
 
 function searchCity(city) {
@@ -103,7 +105,7 @@ function displayForecast(response) {
     }
   });
 
-  let forecastElement = document.querySelector("#forecast");
+  let forecastElement = document.querySelector("#weather-forecast");
   forecastElement.innerHTML = forecastHtml;
 }
 
